@@ -1,0 +1,56 @@
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\BusinessLogic.dll.config
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\BusinessLogic.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\BusinessLogic.pdb
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\AcspNet.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\AcspNet.Json.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\AutoMapper.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\DataModel.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\EntityFramework.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\Microsoft.Owin.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\Owin.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\Simplify.DI.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\Simplify.Templates.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\System.IO.Abstractions.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\DataModel.pdb
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\AcspNet.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\AcspNet.Json.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\AutoMapper.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\EntityFramework.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\Microsoft.Owin.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\Simplify.DI.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Release\Simplify.Templates.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\obj\Release\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\obj\Release\BusinessLogic.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\obj\Release\BusinessLogic.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\BusinessLogic.dll.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\BusinessLogic.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\BusinessLogic.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\AcspNet.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\AcspNet.Json.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\AutoMapper.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\DataModel.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\EntityFramework.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\Microsoft.Owin.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\Owin.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\Simplify.DI.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\Simplify.Templates.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\System.IO.Abstractions.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\DataModel.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\AcspNet.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\AcspNet.Json.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\AutoMapper.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\EntityFramework.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\Microsoft.Owin.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\Newtonsoft.Json.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\Simplify.DI.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Release\Simplify.Templates.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\obj\Release\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\obj\Release\BusinessLogic.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\obj\Release\BusinessLogic.pdb

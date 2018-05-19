@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RestaurantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="BillID" />
+    </Key>
+    <Property Name="BillID" Type="int" Nullable="false" />
+    <Property Name="TableNo" Type="int" Nullable="false" />
+    <Property Name="TotalPrice" Type="bigint" Nullable="false" />
+    <Property Name="CashTaken" Type="bigint" Nullable="false" />
+    <Property Name="CashReturned" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="TableNo" />
+    </Key>
+    <Property Name="TableNo" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="OrderTime" Type="date" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OverallFoodEaten">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="MenuId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="bigint" Nullable="false" />
+    <Property Name="Price" Type="bigint" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TableQty">
+    <Key>
+      <PropertyRef Name="TableID" />
+    </Key>
+    <Property Name="TableID" Type="int" Nullable="false" />
+    <Property Name="TableStatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Bill_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="TableNo" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="TableNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_TableQty">
+    <End Role="TableQty" Type="Self.TableQty" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TableQty">
+        <PropertyRef Name="TableID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="TableNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OverallFoodEaten_Menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+    <End Role="OverallFoodEaten" Type="Self.OverallFoodEaten" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OverallFoodEaten">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RestaurantModelStoreContainer">
+    <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OverallFoodEaten" EntityType="Self.OverallFoodEaten" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TableQty" EntityType="Self.TableQty" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Bill_Order" Association="Self.FK_Bill_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Menu" Association="Self.FK_Order_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_TableQty" Association="Self.FK_Order_TableQty">
+      <End Role="TableQty" EntitySet="TableQty" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OverallFoodEaten_Menu" Association="Self.FK_OverallFoodEaten_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="OverallFoodEaten" EntitySet="OverallFoodEaten" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

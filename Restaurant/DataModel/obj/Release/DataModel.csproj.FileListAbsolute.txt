@@ -1,0 +1,11 @@
+C:\Users\Administrator\Desktop\newbck\Restaurant\DataModel\bin\Release\DataModel.dll.config
+C:\Users\Administrator\Desktop\newbck\Restaurant\DataModel\bin\Release\DataModel.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\DataModel\bin\Release\DataModel.pdb
+C:\Users\Administrator\Desktop\newbck\Restaurant\DataModel\bin\Release\AutoMapper.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\DataModel\bin\Release\EntityFramework.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\DataModel\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\DataModel\bin\Release\AutoMapper.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\DataModel\bin\Release\EntityFramework.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\DataModel\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\DataModel\obj\Release\DataModel.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\DataModel\obj\Release\DataModel.pdb

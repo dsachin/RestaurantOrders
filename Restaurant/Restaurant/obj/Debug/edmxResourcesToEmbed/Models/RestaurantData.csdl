@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RestaurantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="RestaurantEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bills" EntityType="RestaurantModel.Bill" />
+    <EntitySet Name="Menus" EntityType="RestaurantModel.Menu" />
+    <EntitySet Name="Orders" EntityType="RestaurantModel.Order" />
+    <EntitySet Name="OverallFoodEatens" EntityType="RestaurantModel.OverallFoodEaten" />
+    <EntitySet Name="TableQties" EntityType="RestaurantModel.TableQty" />
+    <AssociationSet Name="FK_Bill_Order" Association="RestaurantModel.FK_Bill_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Menu" Association="RestaurantModel.FK_Order_Menu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OverallFoodEaten_Menu" Association="RestaurantModel.FK_OverallFoodEaten_Menu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="OverallFoodEaten" EntitySet="OverallFoodEatens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_TableQty" Association="RestaurantModel.FK_Order_TableQty">
+      <End Role="TableQty" EntitySet="TableQties" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="BillID" />
+    </Key>
+    <Property Name="BillID" Type="Int32" Nullable="false" />
+    <Property Name="TableNo" Type="Int32" Nullable="false" />
+    <Property Name="TotalPrice" Type="Int64" Nullable="false" />
+    <Property Name="CashTaken" Type="Int64" Nullable="false" />
+    <Property Name="CashReturned" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="RestaurantModel.FK_Bill_Order" FromRole="Bill" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Orders" Relationship="RestaurantModel.FK_Order_Menu" FromRole="Menu" ToRole="Order" />
+    <NavigationProperty Name="OverallFoodEatens" Relationship="RestaurantModel.FK_OverallFoodEaten_Menu" FromRole="Menu" ToRole="OverallFoodEaten" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="TableNo" />
+    </Key>
+    <Property Name="TableNo" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="OrderTime" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Bills" Relationship="RestaurantModel.FK_Bill_Order" FromRole="Order" ToRole="Bill" />
+    <NavigationProperty Name="Menu" Relationship="RestaurantModel.FK_Order_Menu" FromRole="Order" ToRole="Menu" />
+    <NavigationProperty Name="TableQty" Relationship="RestaurantModel.FK_Order_TableQty" FromRole="Order" ToRole="TableQty" />
+  </EntityType>
+  <EntityType Name="OverallFoodEaten">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="MenuId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int64" Nullable="false" />
+    <Property Name="Price" Type="Int64" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Menu" Relationship="RestaurantModel.FK_OverallFoodEaten_Menu" FromRole="OverallFoodEaten" ToRole="Menu" />
+  </EntityType>
+  <EntityType Name="TableQty">
+    <Key>
+      <PropertyRef Name="TableID" />
+    </Key>
+    <Property Name="TableID" Type="Int32" Nullable="false" />
+    <Property Name="TableStatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="RestaurantModel.FK_Order_TableQty" FromRole="TableQty" ToRole="Order" />
+  </EntityType>
+  <Association Name="FK_Bill_Order">
+    <End Type="RestaurantModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="RestaurantModel.Bill" Role="Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="TableNo" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="TableNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Menu">
+    <End Type="RestaurantModel.Menu" Role="Menu" Multiplicity="1" />
+    <End Type="RestaurantModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OverallFoodEaten_Menu">
+    <End Type="RestaurantModel.Menu" Role="Menu" Multiplicity="1" />
+    <End Type="RestaurantModel.OverallFoodEaten" Role="OverallFoodEaten" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OverallFoodEaten">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_TableQty">
+    <End Type="RestaurantModel.TableQty" Role="TableQty" Multiplicity="1" />
+    <End Type="RestaurantModel.Order" Role="Order" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TableQty">
+        <PropertyRef Name="TableID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="TableNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RestaurantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="BillID" />
+    </Key>
+    <Property Name="BillID" Type="int" Nullable="false" />
+    <Property Name="TableNo" Type="int" Nullable="false" />
+    <Property Name="TotalPrice" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="CashTaken" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="CashReturned" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustmerDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="MobNo" Type="nchar" MaxLength="10" />
+    <Property Name="BillID" Type="int" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="TableNo" />
+    </Key>
+    <Property Name="TableNo" Type="int" Nullable="false" />
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="OrderTime" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stats">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="MenuId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quantity" Type="bigint" Nullable="false" />
+    <Property Name="OverallPrice" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TableConfig">
+    <Key>
+      <PropertyRef Name="TableID" />
+    </Key>
+    <Property Name="TableID" Type="int" Nullable="false" />
+    <Property Name="TableStatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tax">
+    <Key>
+      <PropertyRef Name="TaxID" />
+    </Key>
+    <Property Name="CGST" Type="decimal" Precision="2" Scale="2" />
+    <Property Name="SGST" Type="decimal" Precision="2" Scale="2" />
+    <Property Name="ServiceTax" Type="decimal" Precision="2" Scale="2" />
+    <Property Name="TaxID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Bill_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="TableNo" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="TableNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustmerDetail_CustmerDetail">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="0..1" />
+    <End Role="CustmerDetail" Type="Self.CustmerDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="BillID" />
+      </Principal>
+      <Dependent Role="CustmerDetail">
+        <PropertyRef Name="BillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_TableQty">
+    <End Role="TableConfig" Type="Self.TableConfig" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TableConfig">
+        <PropertyRef Name="TableID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="TableNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OverallFoodEaten_Menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+    <End Role="Stats" Type="Self.Stats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Stats">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RestaurantModelStoreContainer">
+    <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustmerDetail" EntityType="Self.CustmerDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stats" EntityType="Self.Stats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TableConfig" EntityType="Self.TableConfig" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tax" EntityType="Self.Tax" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Bill_Order" Association="Self.FK_Bill_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustmerDetail_CustmerDetail" Association="Self.FK_CustmerDetail_CustmerDetail">
+      <End Role="Bill" EntitySet="Bill" />
+      <End Role="CustmerDetail" EntitySet="CustmerDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Menu" Association="Self.FK_Order_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_TableQty" Association="Self.FK_Order_TableQty">
+      <End Role="TableConfig" EntitySet="TableConfig" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OverallFoodEaten_Menu" Association="Self.FK_OverallFoodEaten_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="Stats" EntitySet="Stats" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

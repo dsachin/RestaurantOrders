@@ -1,0 +1,17 @@
+﻿@model BusinessLogic.Models.InfoTableViewModel
+
+    Bill For Table No:
+
+@using (Html.BeginForm("EditOrder", "Home"))
+{
+        @Html.DropDownListFor(model => model.TableNo, new SelectList(ViewBag.obj, "TableID", "TableID"), "--Select--", new { @id = "TableNo", @class = "dropdown" })   
+        <button class="btn btn-outline-success"  id="submitButton"type="submit" disabled> Get Details </button>
+}
+<script>
+   
+    $("#TableNo").change(function () {
+            TableNo = $(this).find('option:selected').val();
+            localStorage.setItem("TableNoEdit", TableNo);
+            document.getElementById("submitButton").disabled = false;
+    });
+</script>

@@ -1,0 +1,50 @@
+﻿@model DataModel.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Menu.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Menu.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TableConfig.TableID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TableConfig.TableID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TableNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

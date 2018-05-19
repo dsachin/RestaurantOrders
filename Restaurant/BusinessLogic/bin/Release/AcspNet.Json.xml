@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AcspNet.Json</name>
+    </assembly>
+    <members>
+        <member name="T:AcspNet.ModelBinding.Binders.JsonModelBinder">
+            <summary>
+            Provides HTTP request JSON data to object binding
+            </summary>
+        </member>
+        <member name="M:AcspNet.ModelBinding.Binders.JsonModelBinder.Bind``1(AcspNet.ModelBinding.ModelBinderEventArgs{``0})">
+            <summary>
+            Binds the specified JSON data to object.
+            </summary>
+            <typeparam name="T">Model type</typeparam>
+            <param name="args">The <see cref="T:AcspNet.ModelBinding.ModelBinderEventArgs`1"/> instance containing the event data.</param>
+        </member>
+        <member name="T:AcspNet.Responses.Json">
+            <summary>
+            Provides controller JSON response (send only JSON string to response)
+            </summary>
+        </member>
+        <member name="M:AcspNet.Responses.Json.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AcspNet.Responses.Json"/> class.
+            </summary>
+            <param name="objectToConvert">The object to convert to JSON.</param>
+        </member>
+        <member name="M:AcspNet.Responses.Json.Process">
+            <summary>
+            Processes this response
+            </summary>
+        </member>
+    </members>
+</doc>

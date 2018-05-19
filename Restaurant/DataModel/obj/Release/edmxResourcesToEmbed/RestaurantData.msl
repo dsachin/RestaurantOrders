@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RestaurantModelStoreContainer" CdmEntityContainer="RestaurantEntities3">
+    <EntitySetMapping Name="Bills">
+      <EntityTypeMapping TypeName="RestaurantModel.Bill">
+        <MappingFragment StoreEntitySet="Bill">
+          <ScalarProperty Name="CashReturned" ColumnName="CashReturned" />
+          <ScalarProperty Name="CashTaken" ColumnName="CashTaken" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+          <ScalarProperty Name="BillID" ColumnName="BillID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustmerDetails">
+      <EntityTypeMapping TypeName="RestaurantModel.CustmerDetail">
+        <MappingFragment StoreEntitySet="CustmerDetail">
+          <ScalarProperty Name="BillID" ColumnName="BillID" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="RestaurantModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="RestaurantModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="BillID" ColumnName="BillID" />
+          <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stats">
+      <EntityTypeMapping TypeName="RestaurantModel.Stat">
+        <MappingFragment StoreEntitySet="Stats">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OverallPrice" ColumnName="OverallPrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableConfigs">
+      <EntityTypeMapping TypeName="RestaurantModel.TableConfig">
+        <MappingFragment StoreEntitySet="TableConfig">
+          <ScalarProperty Name="TableStatus" ColumnName="TableStatus" />
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taxes">
+      <EntityTypeMapping TypeName="RestaurantModel.Tax">
+        <MappingFragment StoreEntitySet="Tax">
+          <ScalarProperty Name="IndexId" ColumnName="IndexId" />
+          <ScalarProperty Name="ServiceTax" ColumnName="ServiceTax" />
+          <ScalarProperty Name="SGST" ColumnName="SGST" />
+          <ScalarProperty Name="CGST" ColumnName="CGST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

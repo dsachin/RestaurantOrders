@@ -1,0 +1,56 @@
+﻿@*@model IEnumerable<BusinessLogic.Models.OrderMenuModel>
+
+@{
+    ViewBag.Title = "OrderMultiModel";
+}
+
+<h2>OrderMultiModel</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="form-group">
+    @Html.LabelFor(model => model.TableNo, "TableNo", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownList("TableNo", null, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model. "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.menu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th></th>
+    </tr>
+
+
+
+@for (var i = 0; i < Model.Count(); i++)
+{
+
+    <tr>
+        <td id="menu-@i">
+            @(Model.ElementAt(i).menu.)
+            @M
+        </td>
+        <td id="name-@i">
+            @(Model.ElementAt(i).Price)
+        </td>
+        <td id="cat-@i">
+            @(Model.ElementAt(i).Category)
+        </td>
+        <td>
+            <input type="text" id="qty-@i" />
+            <input type="button" id="Quantity1" class="Add " />
+
+        </td>
+    </tr>
+}
+</table>*@

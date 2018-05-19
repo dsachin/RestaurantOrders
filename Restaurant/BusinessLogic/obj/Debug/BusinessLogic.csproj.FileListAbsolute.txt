@@ -1,0 +1,86 @@
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AcspNet.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AcspNet.Json.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AutoMapper.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\DataModel.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Microsoft.Owin.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Owin.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Simplify.DI.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Simplify.Templates.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\System.IO.Abstractions.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\DataModel.pdb
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\DataModel.dll.config
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AcspNet.xml
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AcspNet.Json.xml
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AutoMapper.xml
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Microsoft.Owin.xml
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Simplify.DI.xml
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Simplify.Templates.xml
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\sachi\Desktop\newbck\Restaurant\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AcspNet.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AcspNet.Json.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AutoMapper.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\DataModel.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Microsoft.Owin.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Owin.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Simplify.DI.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Simplify.Templates.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\System.IO.Abstractions.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\DataModel.pdb
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AcspNet.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AcspNet.Json.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\AutoMapper.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Microsoft.Owin.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Simplify.DI.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\bin\Debug\Simplify.Templates.xml
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\Administrator\Desktop\newbck\Restaurant\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\AcspNet.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\AcspNet.Json.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\AutoMapper.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\DataModel.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\Microsoft.Owin.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\Owin.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\Simplify.DI.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\Simplify.Templates.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\System.IO.Abstractions.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\DataModel.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\AcspNet.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\AcspNet.Json.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\AutoMapper.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\Microsoft.Owin.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\Simplify.DI.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\bin\Debug\Simplify.Templates.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Restaurant\BusinessLogic\obj\Debug\BusinessLogic.pdb

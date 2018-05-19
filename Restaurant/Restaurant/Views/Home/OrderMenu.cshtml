@@ -1,0 +1,145 @@
+﻿@model IEnumerable<BusinessLogic.Models.MultiModels.OrderMenuListViewModel>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.validate.min.js"></script>
+
+<script>
+    var orderArray = [];
+    var orderObject = {};
+    var menuObject = {};
+    var orderJSON = {};
+    var TableId;
+    $(document).ready(function () {
+
+        // code to read selected table row cell data (values).
+        $("#tableTable").on('click', '.tableButton', function () {
+            var Index = ($(this).parents('td').index());
+            TableId = $("#tableId-" + Index).text()
+        });
+        //Selected menu is stored in object and array and validations are checked
+        $("#MenuTable").on('click', '.Add', function () {
+            menuObject.TableNo = TableId;
+            if (TableId == null) {
+                alert("Please Select Table No first");
+            }
+            else {
+                $("#tableNo").html(TableId);
+                // get the current row
+                var Index = ($(this).parents('tr').index()) - 1;
+                var currentRow = $(this).closest("tr");
+                var colID = currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+                var colName = currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+                var colPrice = currentRow.find("td:eq(2)").text();
+                var colQty = $("#qty-" + Index).val()
+                if (colQty == "")
+                    alert("Please Enter Quantity");
+                else if (jQuery.isNumeric(colQty) && colQty > 0) {
+                    var date = new Date();
+                    orderObject.MenuId = colID;
+                    orderObject.Name = colName;
+                    orderObject.Price = colPrice;
+                    orderObject.Quantity = colQty;
+                    menuObject.OrderId = colID;
+                    menuObject.Quantity = colQty;
+                    menuObject.OrderTime = date.toLocaleString();
+                    orderArray.push(menuObject);
+                    menuObject = {};
+                    console.log(orderArray);
+                    orderJSON = JSON.stringify(orderObject);
+                    $('#tableDiv').append('<tr>');
+                    for (var key in orderObject) {
+                        $('#tableDiv').append('<td>' + orderObject[key] + '</td>');
+                    }
+                    $('#tableDiv').append('</tr>');
+                }
+                else {
+                    alert("Please Enter Quantity in positive number");
+                }
+            }
+        });
+        //Ajax call for placing order.
+        $("#PlaceOrder").click(function () {
+            if (orderArray[0] == null) {
+                alert("Please Select Table No first");
+            }
+            else {
+                var jsnData = JSON.stringify({ 'jsnData': orderArray });
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("OrderPlacedData", "Home")',
+                    datatype: "json",
+                    contentType: 'application/json; charset=utf-8',
+                    data: jsnData,
+                    success: function (data) {
+                        alert("Order Placed Successfully!!!");
+                        window.location = '@Url.Action("Index", "Home")';
+                    }
+                });
+            }
+        });
+    });
+</script>
+<table class="table table-responsive w-75" id="tableTable">
+    <tr>
+        Available Tables :
+
+        @for (int i = 0; i < ViewBag.obj.TableList.Count; i++)
+        {
+
+            <td><button class="btn btn-outline-danger tableButton" id="tableId-@i">@ViewBag.obj.TableList[i].TableID </button></td>
+        }
+    </tr>
+</table>
+<div class="row">
+    <div class="col-12">
+        <div>
+            <p class="alert-heading font-weight-bold"> Select Menu :</p>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <table class="table table-bordered table-hover" id="MenuTable">
+                    <tr>
+                        <th>
+                            Menu ID
+                        </th>
+
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Category
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
+                    </tr>
+                    @for (int i = 0; i < ViewBag.obj.MenuList.Count; i++)
+                    {
+                        <tr>
+                            <td id="itemId-@i">@ViewBag.obj.MenuList[i].MenuId</td>
+                            <td id="itemPrice-@i">@ViewBag.obj.MenuList[i].Price</td>
+                            <td>@ViewBag.obj.MenuList[i].Category</td>
+                            <td>
+                                <input class="text-dark text-md-center " size="4" type="text" id="qty-@i" />
+
+                                <button id="qtyAddBtn" class="Add btn-sm btn-outline-info">Add </button>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="col-6">
+                <p class="font-weight-bold">Ordered Items for Table No: <span class="align-content-end" id="tableNo"> </span></p>
+                <table class="table table-bordered table-hover">
+                    <thead><tr><th>Name</th><th>Price</th><th>Category</th><th>Quantity</th></tr></thead>
+                    <tbody id="tableDiv"></tbody>
+                </table>
+                <button class="btn btn-outline-success" id="PlaceOrder">Place Order</button>
+                <button class="btn btn-outline-warning" onclick="location.reload()" id="ClearOrder">Clear Order</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

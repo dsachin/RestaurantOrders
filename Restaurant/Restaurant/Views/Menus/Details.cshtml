@@ -1,0 +1,40 @@
+﻿@model BusinessLogic.Models.MenuViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div>
+    <h4>Menu Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenuId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+    </dl>
+    <a href="/RestaurantManagement/Dashboard/" class="btn btn-info" role="button">Back to Management</a>
+
+</div>

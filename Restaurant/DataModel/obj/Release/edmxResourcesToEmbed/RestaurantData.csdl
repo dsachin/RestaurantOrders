@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RestaurantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="RestaurantEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bills" EntityType="RestaurantModel.Bill" />
+    <EntitySet Name="CustmerDetails" EntityType="RestaurantModel.CustmerDetail" />
+    <EntitySet Name="Menus" EntityType="RestaurantModel.Menu" />
+    <EntitySet Name="Orders" EntityType="RestaurantModel.Order" />
+    <EntitySet Name="Stats" EntityType="RestaurantModel.Stat" />
+    <EntitySet Name="TableConfigs" EntityType="RestaurantModel.TableConfig" />
+    <EntitySet Name="Taxes" EntityType="RestaurantModel.Tax" />
+    <AssociationSet Name="FK_CustmerDetail_CustmerDetail" Association="RestaurantModel.FK_CustmerDetail_CustmerDetail">
+      <End Role="Bill" EntitySet="Bills" />
+      <End Role="CustmerDetail" EntitySet="CustmerDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Bill" Association="RestaurantModel.FK_Order_Bill">
+      <End Role="Bill" EntitySet="Bills" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OverallFoodEaten_Menu" Association="RestaurantModel.FK_OverallFoodEaten_Menu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="Stat" EntitySet="Stats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_TableConfig" Association="RestaurantModel.FK_Order_TableConfig">
+      <End Role="TableConfig" EntitySet="TableConfigs" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="BillID" />
+    </Key>
+    <Property Name="BillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TableNo" Type="Int32" Nullable="false" />
+    <Property Name="TotalPrice" Type="Double" Nullable="false" />
+    <Property Name="CashTaken" Type="Double" Nullable="false" />
+    <Property Name="CashReturned" Type="Double" Nullable="false" />
+    <NavigationProperty Name="CustmerDetails" Relationship="RestaurantModel.FK_CustmerDetail_CustmerDetail" FromRole="Bill" ToRole="CustmerDetail" />
+    <NavigationProperty Name="Orders" Relationship="RestaurantModel.FK_Order_Bill" FromRole="Bill" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="CustmerDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="BillID" Type="Int32" />
+    <NavigationProperty Name="Bill" Relationship="RestaurantModel.FK_CustmerDetail_CustmerDetail" FromRole="CustmerDetail" ToRole="Bill" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Stats" Relationship="RestaurantModel.FK_OverallFoodEaten_Menu" FromRole="Menu" ToRole="Stat" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderIndex" />
+    </Key>
+    <Property Name="TableNo" Type="Int32" Nullable="false" />
+    <Property Name="OrderId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="OrderTime" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OrderIndex" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BillID" Type="Int32" />
+    <NavigationProperty Name="Bill" Relationship="RestaurantModel.FK_Order_Bill" FromRole="Order" ToRole="Bill" />
+    <NavigationProperty Name="TableConfig" Relationship="RestaurantModel.FK_Order_TableConfig" FromRole="Order" ToRole="TableConfig" />
+  </EntityType>
+  <EntityType Name="Stat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="MenuId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Quantity" Type="Int64" Nullable="false" />
+    <Property Name="OverallPrice" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Menu" Relationship="RestaurantModel.FK_OverallFoodEaten_Menu" FromRole="Stat" ToRole="Menu" />
+  </EntityType>
+  <EntityType Name="TableConfig">
+    <Key>
+      <PropertyRef Name="TableID" />
+    </Key>
+    <Property Name="TableID" Type="Int32" Nullable="false" />
+    <Property Name="TableStatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="RestaurantModel.FK_Order_TableConfig" FromRole="TableConfig" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Tax">
+    <Key>
+      <PropertyRef Name="IndexId" />
+    </Key>
+    <Property Name="CGST" Type="Double" Nullable="false" />
+    <Property Name="SGST" Type="Double" Nullable="false" />
+    <Property Name="ServiceTax" Type="Double" />
+    <Property Name="IndexId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CustmerDetail_CustmerDetail">
+    <End Type="RestaurantModel.Bill" Role="Bill" Multiplicity="0..1" />
+    <End Type="RestaurantModel.CustmerDetail" Role="CustmerDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="BillID" />
+      </Principal>
+      <Dependent Role="CustmerDetail">
+        <PropertyRef Name="BillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Bill">
+    <End Type="RestaurantModel.Bill" Role="Bill" Multiplicity="0..1" />
+    <End Type="RestaurantModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="BillID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="BillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OverallFoodEaten_Menu">
+    <End Type="RestaurantModel.Menu" Role="Menu" Multiplicity="1" />
+    <End Type="RestaurantModel.Stat" Role="Stat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="MenuId" />
+      </Principal>
+      <Dependent Role="Stat">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_TableConfig">
+    <End Type="RestaurantModel.TableConfig" Role="TableConfig" Multiplicity="1" />
+    <End Type="RestaurantModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableConfig">
+        <PropertyRef Name="TableID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="TableNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

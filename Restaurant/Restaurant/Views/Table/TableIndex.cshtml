@@ -1,0 +1,37 @@
+﻿@model IEnumerable<BusinessLogic.Models.TableViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tables Available for configuration</h2>
+
+<p>
+    @Html.ActionLink("Create New", "TableCreate")
+</p>
+<table style="width:48%"class="table form-control">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TableID)
+        </th>       
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TableID)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Edit", "TableEdit", new { id=item.TableID }) |
+            @Html.ActionLink("Details", "TableDetails", new { id=item.TableID }) |
+            @Html.ActionLink("Delete", "TableDelete", new { id=item.TableID })
+        </td>
+    </tr>
+}
+
+</table>
+<a href="/RestaurantManagement/Dashboard/" class="btn btn-info" role="button">Back to Management</a>
+

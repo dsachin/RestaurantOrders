@@ -1,0 +1,88 @@
+﻿@model BusinessLogic.Models.MultiModels.EditOrderViewModel
+
+@{
+    ViewBag.Title = "EditOrder";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="bootpopup.js"></script>
+<script>
+
+    $(document).ready(function () {
+        var order = {};
+        var EditedQuantity = [];
+        //On click of add Button the value of qty is added into object.
+        $("#MenuTable").on('click', '.Add', function () {
+            var Index = ($(this).parents('tr').index()) - 1;
+            var currentRow = $(this).closest("tr");
+            var updatedQuantity = currentRow.find("td:eq(2)").text();
+            var colQty = $("#qty-" + Index).val()
+            EditedQuantity.push(colQty);
+            order.EditedQuantity = EditedQuantity;
+            alert("Quantity Updated")
+        });
+        //Delete order button changes the orderDeletion status to true and calls ajax to update 
+        $("#DeleteOrder").click(function () {
+            order.EditTableId = localStorage.getItem("TableNoEdit");
+            order.OrderDeletion = true;
+            ajaxCall();         
+        });
+        //Place order button places order with help of ajax call.
+        $("#PlaceOrder").click(function () {
+            order.EditTableId = localStorage.getItem("TableNoEdit");
+            ajaxCall();
+        });
+
+        //It Consist of order data in object form.
+        function ajaxCall() {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("EditOrderUpdateData", "Home")',
+                datatype: "json",
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(order),
+                success: function (data) {
+                    alert("Order Updated Successfully!!!");
+                    window.location = '@Url.Action("Index", "Home")';
+                },
+                error: function (data) {
+                    alert("Error While Updating Data")
+                    console.log(JSON.stringify(data));
+                }
+            });
+        }
+    });
+</script>
+
+<button class="btn btn-outline-danger" id="DeleteOrder">Delete Order</button>
+<table class="table" id="MenuTable">
+    <tr>
+        <th>
+            Menu ID
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Updated Quantity
+        </th>
+    </tr>
+    @for (int i = 0; i < Model.OrderList.Count; i++)
+    {
+        <tr>
+            <td>@Model.OrderList[i].OrderId</td>
+            <td>@Model.OrderList[i].Quantity</td>
+            <td>
+                <input type="text" id="qty-@i" />
+                <button id="qtyUpadteBtn" class="Add btn btn-outline-info">Update</button>
+            </td>
+        </tr>
+    }
+</table>
+<button class="btn btn-outline-success" id="PlaceOrder">Update Order</button>
+
+
+
+
+
